@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Add Details
+{% endblock title %}
+
+{% block body %}
+<div class="container" style="padding: 5vw">
+  <form method="post" action="/addSpeaker">
+    {% csrf_token %}
+    {% comment %} <input type="hidden" name="csrfmiddlewaretoken" value="SOfSEV4q35i41PD56Yw4iaupFz49iAqZyZ9dVyaUTXJABcVo75bI0RPukhU6UyIs"> {% endcomment %}
+    
+    <div>
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name of the speaker" required>
+    </div>
+    <div>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="E-mail id of the speaker">
+    </div>
+    <div>
+      <label for="phone" class="form-label">Phone</label>
+      <input type="phone" class="form-control" id="phone" name="phone" placeholder="Contact Number of the speaker" required>
+    </div>
+    <div>
+      <label for="about" class="form-label">About</label>
+      <input type="text" class="form-control" id="about" name="about" placeholder="e.g., Topic, Time, etc.">
+    </div>
+    <div class="col-12 py-3 text-center">
+      <button id="myButton" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock body %}

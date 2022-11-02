@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+<img src="https://media-exp1.licdn.com/dms/image/C4D1BAQGbDwf19mja0w/company-background_10000/0/1651504118708?e=2147483647&amp;v=beta&amp;t=cp0kbrONaCT869YUVtzIOr9i_55bSJG8leqobGn2U54" jsaction="load:XAeZkd;" jsname="HiaYvf" class="n3VNCb KAlRDb" alt="TalentServe" data-noaft="1" style="width: 100%">
+
+<table class="table table-primary table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">About</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    {% for all_speakers in object %}
+    <tbody>
+      <tr>
+        <td>{{all_speakers.name}}</td>
+        <td>{{all_speakers.email}}</td>
+        <td>{{all_speakers.phone}}</td>
+        <td>{{all_speakers.about}}</td>
+        <td>{{all_speakers.date}}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+{% endblock body %}
